@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Campus Café — Login</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .auth-wrap{min-height:68vh;display:flex;align-items:center;justify-content:center}
+    .card-form{width:100%;max-width:420px;background:rgba(0,0,0,0.55);padding:22px;border-radius:12px;backdrop-filter:blur(6px);color:#fff}
+    .card-form h2{margin:0 0 6px}
+    .card-form .sub{margin:0 0 14px;color:rgba(255,255,255,0.85)}
+    .form-group{margin-bottom:12px}
+    label{display:block;font-size:13px;margin-bottom:6px}
+    input[type=email],input[type=password]{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);background:transparent;color:inherit}
+    .error{color:#ffb3b3;font-size:13px;margin-top:6px}
+    .btn-block{display:block;width:100%}
+    .form-foot{margin-top:12px;text-align:center}
+    .form-foot a{color:var(--accent);text-decoration:none;font-weight:700;cursor:pointer}
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Campus Café</a>
+      <nav class="nav">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="menu.html">Menu</a>
+        <button id="cartBtn" class="nav-btn">Cart <span id="cart-count" class="badge">0</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="auth-wrap">
+    <form id="loginForm" class="card-form" novalidate>
+      <h2>Welcome Back</h2>
+      <p class="sub">Sign in to order your favorite meals</p>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="student@university.edu" required />
+        <div id="err-email" class="error" aria-live="polite"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="••••••••" required />
+        <div id="err-pass" class="error" aria-live="polite"></div>
+      </div>
+
+      <button type="submit" class="btn primary btn-block">Login</button>
+      <p class="form-foot">New here? <a id="createAccountLink" href="register.html">Create an account</a></p>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><p>© <span id="year"></span> Campus Café</p></div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded',()=>{
+      document.getElementById('year').textContent = new Date().getFullYear();
+      const form = document.getElementById('loginForm');
+      form.addEventListener('submit', e=>{
+        e.preventDefault();
+        const email = document.getElementById('email');
+        const pass = document.getElementById('password');
+        let ok = true;
+        document.getElementById('err-email').textContent = '';
+        document.getElementById('err-pass').textContent = '';
+        if(!email.value || !/.+@.+\..+/.test(email.value)){ document.getElementById('err-email').textContent = 'Please enter a valid email'; ok=false }
+        if(!pass.value || pass.value.length < 4){ document.getElementById('err-pass').textContent = 'Password must be at least 4 characters'; ok=false }
+        if(!ok) return;
+        // fake login: save user and redirect to menu
+        localStorage.setItem('cafe_user', JSON.stringify({email: email.value}));
+        window.location.href = 'menu.html';
+      });
+
+        // Ensure "Create an account" link works reliably on touch devices
+        const createLink = document.getElementById('createAccountLink');
+        if(createLink){
+          createLink.addEventListener('click', e=>{ e.preventDefault(); window.location.href = createLink.href; });
+          createLink.addEventListener('touchstart', e=>{ e.preventDefault(); window.location.href = createLink.href; });
+        }
+    });
+  </script>
+
+</body>
+</html>

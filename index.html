@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Campus Cafe — Home</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Campus Café</a>
+      <nav class="nav" aria-label="Main navigation">
+        <a class="nav-link" href="#home">Home</a>
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#features">Features</a>
+        <a class="nav-link" href="#menu">Menu</a>
+        <a class="nav-link" href="#contact">Contact</a>
+        <button id="cartBtn" class="nav-btn">Cart <span id="cart-count" class="badge">0</span></button>
+        <a class="nav-link" href="login.html">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="overlay"></div>
+      <div class="hero-inner container">
+        <h1>Welcome to Campus Café</h1>
+        <p>Fresh food, great coffee, delivered quickly to campus — order in seconds.</p>
+        <div class="hero-actions">
+          <button id="viewMenu" class="btn primary">View Menu</button>
+          <a class="btn ghost" href="menu.html">Full Menu</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu container" id="menu">
+      <h2 class="section-title">Popular Right Now</h2>
+      <div id="menu-grid" class="grid"></div>
+    </section>
+
+    <section id="features" class="container features">
+      <h2 class="section-title">Why Choose Us</h2>
+      <div class="grid">
+        <div class="card">
+          <div style="font-size:28px">☕</div>
+          <h4>Great Coffee</h4>
+          <p>Specialty beans roasted for campus tastes.</p>
+        </div>
+        <div class="card">
+          <div style="font-size:28px">⚡</div>
+          <h4>Fast Delivery</h4>
+          <p>Quick service between classes and dorms.</p>
+        </div>
+        <div class="card">
+          <div style="font-size:28px">💳</div>
+          <h4>Cashless</h4>
+          <p>Easy checkout with saved student accounts.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="container about">
+      <h2 class="section-title">About Campus Café</h2>
+      <div class="grid">
+        <div>
+          <p>Campus Café started to bring convenient, affordable and tasty meals to students. We source ingredients locally and prepare meals fresh daily.</p>
+          <p>Open to everyone on campus — order ahead and skip the line.</p>
+        </div>
+        <div class="card" style="padding:0;overflow:hidden">
+          <div class="thumb" style="height:180px;background-image:url('cafteria.jpg')"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="container contact">
+      <h2 class="section-title">Contact Us</h2>
+      <div class="grid">
+        <form id="contactForm" class="card">
+          <div class="form-group"><label for="name">Name</label><input id="cf-name" required></div>
+          <div class="form-group"><label for="email">Email</label><input id="cf-email" type="email" required></div>
+          <div class="form-group"><label for="message">Message</label><textarea id="cf-message" rows="4" required></textarea></div>
+          <div style="display:flex;gap:10px"><button class="btn primary" type="submit">Send</button><button id="cf-clear" type="button" class="btn ghost">Clear</button></div>
+          <div id="cf-status" style="margin-top:8px;color:var(--muted)"></div>
+        </form>
+        <div class="card">
+          <h4>Visit Us</h4>
+          <p>123 Campus Way<br/>Open: 8am — 8pm</p>
+          <h4>Call</h4>
+          <p>+1 (555) 123-4567</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="cartModal" class="cart-modal" aria-hidden="true">
+    <div class="cart-panel">
+      <header class="cart-header">
+        <h3>Your Cart</h3>
+        <button id="closeCart" class="close">✕</button>
+      </header>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-footer">
+        <div class="total">Total: <span id="cartTotal">$0.00</span></div>
+        <div class="cart-actions">
+          <button id="clearCart" class="btn ghost">Clear</button>
+          <button id="checkout" class="btn primary">Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Campus Café</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Cafe – Checkout</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="brand"><span class="brand-mark">C</span> Campus Cafe</a>
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="cart.html">Cart <span class="cart-badge">0</span></a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="auth-wrap">
+    <form id="checkoutForm" class="card-form" novalidate>
+      <h2>Checkout</h2>
+      <p class="sub">Order total: <strong id="checkoutTotal">0 ETB</strong></p>
+
+      <div class="form-group">
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Abebe Kebede" />
+        <div class="error-msg" data-err="fullname"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="studentId">Student ID</label>
+        <input type="text" id="studentId" name="studentId" placeholder="UGR/1234/15" />
+        <div class="error-msg" data-err="studentId"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="0912345678" />
+        <div class="error-msg" data-err="phone"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="dorm">Dorm / Pickup Location</label>
+        <input type="text" id="dorm" name="dorm" placeholder="Block 5, Room 210" />
+        <div class="error-msg" data-err="dorm"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="payment">Payment Method</label>
+        <select id="payment" name="payment">
+          <option value="">— Select —</option>
+          <option value="cash">Cash on Pickup</option>
+          <option value="telebirr">Telebirr</option>
+          <option value="cbe">CBE Birr</option>
+          <option value="card">Card</option>
+        </select>
+        <div class="error-msg" data-err="payment"></div>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block">Place Order</button>
+      <p class="form-foot"><a href="cart.html">← Back to cart</a></p>
+    </form>
+  </main>
+
+  <footer class="footer"><p>© 2026 Campus Cafe</p></footer>
+  <script src="js/app.js"></script>
+</body>
+</html>

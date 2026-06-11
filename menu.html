@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Cafe – Menu</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">C</span> Campus Cafe
+    </a>
+
+    <button class="nav-toggle">☰</button>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html" class="active">Menu</a></li>
+      <li><a href="cart.html">Cart <span class="cart-badge">0</span></a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="register.html">Register</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="section">
+
+  <h2 class="section-title"> Menu</h2>
+  <p class="section-sub"><b>
+Explore our delicious offerings, from traditional Ethiopian dishes to modern favorites.
+  </b>></p>
+
+  <!-- SEARCH (optional but still useful) -->
+<div class="toolbar">
+  <div class="search-box">
+    <input id="searchInput" type="text" placeholder="🔍 Search food, drinks, desserts..." />
+  </div>
+</div>
+
+  <!-- MENU CONTAINER -->
+  <div id="foodGrid"></div>
+
+</main>
+
+<footer class="footer">
+  <p>© 2026 Campus Cafe</p>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
