@@ -1,10 +1,14 @@
 const MENU = [
-  {id:1,name:'Espresso',price:1.5,desc:'Rich & bold espresso',img:'https://images.unsplash.com/photo-1510627498534-cf7e9002facc?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=1'},
-  {id:2,name:'Cappuccino',price:2.5,desc:'Steamed milk with foam',img:'https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=2'},
-  {id:3,name:'Latte',price:2.75,desc:'Smooth milk and espresso',img:'https://images.unsplash.com/photo-1498804103079-a6351b050096?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=3'},
-  {id:4,name:'Injera Combo',price:5.5,desc:'Traditional injera with sides',img:'https://images.unsplash.com/photo-1543353071-087092ec393a?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=4'},
-  {id:5,name:'Shawarma',price:4.25,desc:'Spiced chicken wrap',img:'https://images.unsplash.com/photo-1604908177522-8f1b7b0b9a0d?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=5'},
-  {id:6,name:'Burger',price:4.0,desc:'Beef burger with fries',img:'https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=6'}
+  {id:1,name:'Beye-ayinet',price:100,desc:'Assorted Ethiopian cuisine served with injera',img:'beye-ayinetu.webp'},
+  {id:2,name:'Enkulal-Firfir',price:120,desc:'Spicy egg firfir with rich flavor',img:'enkulal- firfr.jpg'},
+  {id:3,name:'Firfir',price:80,desc:'Classic firfir with warm spices',img:'firfir.jpg'},
+  {id:4,name:'Dinich',price:90,desc:'Savory dinich wet with tender potatoes',img:'dinich-wet.jpg'},
+  {id:5,name:'Pasta with Sugo-Recipe',price:100,desc:'Tomato sugo pasta with aromatic herbs',img:'pasta-with-sugu-recipe.jpg'},
+  {id:6,name:'Pasta with Egg',price:130,desc:'Pasta tossed with egg and spices',img:'past be enkulal.jpg'},
+  {id:7,name:'Shiro',price:110,desc:'Creamy shiro stew with traditional spices',img:'shiro.webp'},
+  {id:8,name:'Tegabino',price:130,desc:'Flavorful tegabino stew with spices',img:'tegabino.webp'},
+  {id:9,name:'Timatim-Lebleb',price:90,desc:'Tomato and chickpea mix with fresh herbs',img:'tima-lebleb.jpg'},
+  {id:10,name:'Timatim-Sils',price:90,desc:'Tomato sils served with fresh bread',img:'timatim-sils.jpg'}
 ];
 
 const $ = sel => document.querySelector(sel);
