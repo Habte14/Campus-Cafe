@@ -17,6 +17,7 @@
         <a class="nav-link" href="#features">Features</a>
         <a class="nav-link" href="#menu">Menu</a>
         <a class="nav-link" href="#contact">Contact</a>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
         <button id="cartBtn" class="nav-btn">Cart <span id="cart-count" class="badge">0</span></button>
         <a class="nav-link" href="login.html">Login</a>
       </nav>
@@ -38,7 +39,37 @@
 
     <section class="menu container" id="menu">
       <h2 class="section-title">Popular Right Now</h2>
-      <div id="menu-grid" class="grid"></div>
+      <div class="menu-sections">
+        <div class="menu-category">
+          <div class="menu-category-header">
+            <div>
+              <h3>Food</h3>
+              <p>Classic meals and campus favorites.</p>
+            </div>
+          </div>
+          <div id="food-grid" class="grid"></div>
+        </div>
+
+        <div class="menu-category">
+          <div class="menu-category-header">
+            <div>
+              <h3>Hot Drinks</h3>
+              <p>Warm, comforting beverages.</p>
+            </div>
+          </div>
+          <div id="hot-drink-grid" class="grid"></div>
+        </div>
+
+        <div class="menu-category">
+          <div class="menu-category-header">
+            <div>
+              <h3>Soft Drinks</h3>
+              <p>Refreshing favorites with choice selections.</p>
+            </div>
+          </div>
+          <div id="soft-drink-grid" class="grid"></div>
+        </div>
+      </div>
     </section>
 
     <section id="features" class="container features">
@@ -62,37 +93,39 @@
       </div>
     </section>
 
-    <section id="about" class="container about">
-      <h2 class="section-title">About Campus Café</h2>
-      <div class="grid">
-        <div>
-          <p>Campus Café started to bring convenient, affordable and tasty meals to students. We source ingredients locally and prepare meals fresh daily.</p>
-          <p>Open to everyone on campus — order ahead and skip the line.</p>
+    <div class="about-zone">
+      <section id="about" class="container about">
+        <h2 class="section-title">About Campus Café</h2>
+        <div class="grid">
+          <div>
+            <p>Campus Café started to bring convenient, affordable and tasty meals to students. We source ingredients locally and prepare meals fresh daily.</p>
+            <p>Open to everyone on campus — order ahead and skip the line.</p>
+          </div>
+          <div class="card" style="padding:0;overflow:hidden">
+            <div class="thumb" style="height:180px;background-image:url('cafteria.jpg')"></div>
+          </div>
         </div>
-        <div class="card" style="padding:0;overflow:hidden">
-          <div class="thumb" style="height:180px;background-image:url('cafteria.jpg')"></div>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="contact" class="container contact">
-      <h2 class="section-title">Contact Us</h2>
-      <div class="grid">
-        <form id="contactForm" class="card">
-          <div class="form-group"><label for="name">Name</label><input id="cf-name" required></div>
-          <div class="form-group"><label for="email">Email</label><input id="cf-email" type="email" required></div>
-          <div class="form-group"><label for="message">Message</label><textarea id="cf-message" rows="4" required></textarea></div>
-          <div style="display:flex;gap:10px"><button class="btn primary" type="submit">Send</button><button id="cf-clear" type="button" class="btn ghost">Clear</button></div>
-          <div id="cf-status" style="margin-top:8px;color:var(--muted)"></div>
-        </form>
-        <div class="card">
-          <h4>Visit Us</h4>
-          <p>123 Campus Way<br/>Open: 8am — 8pm</p>
-          <h4>Call</h4>
-          <p>+1 (555) 123-4567</p>
+      <section id="contact" class="container contact">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="grid">
+          <form id="contactForm" class="card">
+            <div class="form-group"><label for="name">Name</label><input id="cf-name" required></div>
+            <div class="form-group"><label for="email">Email</label><input id="cf-email" type="email" required></div>
+            <div class="form-group"><label for="message">Message</label><textarea id="cf-message" rows="4" required></textarea></div>
+            <div style="display:flex;gap:10px"><button class="btn primary" type="submit">Send</button><button id="cf-clear" type="button" class="btn ghost">Clear</button></div>
+            <div id="cf-status" style="margin-top:8px;color:var(--muted)"></div>
+          </form>
+          <div class="card">
+            <h4>Visit Us</h4>
+            <p>123 Campus Way<br/>Open: 8am — 8pm</p>
+            <h4>Call</h4>
+            <p>+1 (555) 123-4567</p>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   </main>
 
   <div id="cartModal" class="cart-modal" aria-hidden="true">
@@ -103,7 +136,7 @@
       </header>
       <div id="cartItems" class="cart-items"></div>
       <div class="cart-footer">
-        <div class="total">Total: <span id="cartTotal">$0.00</span></div>
+        <div class="total">Total: <span id="cartTotal">ETB 0.00</span></div>
         <div class="cart-actions">
           <button id="clearCart" class="btn ghost">Clear</button>
           <button id="checkout" class="btn primary">Checkout</button>
